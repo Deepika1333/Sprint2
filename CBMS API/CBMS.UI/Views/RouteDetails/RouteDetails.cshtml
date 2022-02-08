@@ -1,0 +1,33 @@
+﻿@model IEnumerable<CBMS.Entity.Model.RouteDetails>
+
+
+<div class="row">
+    <div class="col-12">
+        <h3>RouteDetails</h3>
+        <hr />
+        <table class="table table-light table-bordered table-hover">
+            <thead>
+                <tr>
+                    <th>routeNo</th>
+                    <th>source</th>
+                    <th>destination</th>
+                    <th>Edit</th>
+                    <th>Delete</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var routeDetails in Model)
+                {
+    <tr>
+        <td>@routeDetails.routeNo</td>
+        <td>@routeDetails.source</td>
+        <td>@routeDetails.destination</td>
+        <td><a asp-controller="RouteDetails" asp-action="EditRouteDetails" asp-route-routeNo="@routeDetails.routeNo">Edit</a></td>
+        <td><a asp-controller="RouteDetails" asp-action="DeleteRouteDetails" asp-route-routeNo="@routeDetails.routeNo">Delete</a></td>
+    </tr>}
+            </tbody>
+        </table>
+    </div>
+</div>
+
+
